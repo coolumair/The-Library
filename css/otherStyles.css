@@ -1,0 +1,35 @@
+
+h1 {
+    margin-left: 3rem;
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+
+.book-add {
+    margin-top: 2%;
+    width: 60%;
+    margin-left: 3rem;
+}
+
+.submit-button {
+    margin-top: 2%;
+    margin-left: 2rem;
+    display: block;
+}
+
+.back {
+    margin-top: 6%;
+    margin-left: 2rem;
+}
+
+.link-checker {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.book-cover-test {
+    margin-top: 3rem;
+    margin-left: 2rem;
+    width: 10rem;
+    height: 15rem;
+}

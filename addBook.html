@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Book</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/otherStyles.css">
+
+        <script>
+            function SubForm (){
+                $.ajax({
+                    url:'https://api.apispreadsheets.com/data/13947/',
+                    mode: "cors",
+                    type:'post',
+                    data:$("#myForm").serializeArray(),
+                    success: function(){
+                      alert("Book has been added")
+                    },
+                    error: function(){
+                      alert("There was an error")
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Add a Book</h1>
+        <form id="myForm" class="book-add" name="book-form" method="POST">
+            <div class="form-group">
+                <label for="book">Please enter the name of the Book</label>
+                <input id="book" class="form-control" type="text" name="BookTitle" placeholder="Enter Book here" required>
+            </div>
+
+            <div class="form-group">
+                <label for="author">Please enter the Author of the Book</label>
+                <input id="author" class="form-control" type="text" name="Author" placeholder="Enter Author here" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter a Summary of the Book</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="Summary" rows="3" required></textarea>
+            </div>
+
+            <label for="url">Enter the image address/url of an image</label>
+
+            <input type="url" name="url" id="url" class="form-control"
+                placeholder="https://example.png"
+                pattern="https://.*"
+                required>
+            
+            
+
+            
+
+
+        </form>
+
+
+        <button class="btn btn-secondary link-checker">Check if link works</button>
+        <div class="img-tester">
+
+        
+
+        </div>
+        <button class="btn btn-primary btn-lg submit-button" onclick="SubForm()">Submit</button>
+
+        <button class="btn btn-primary btn-lg back">Back</button>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="otherIndex.js" charset="utf-8"></script>
+
+
+
+
+
+    </body>
+</html>

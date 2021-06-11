@@ -1,0 +1,72 @@
+.book-cover {
+    width: 20rem;
+    height: 30rem;
+}
+
+.title {
+    font-family: 'Merriweather', serif;
+}
+
+.author {
+    font-family: 'Dancing Script', cursive;
+}
+
+.container-fluid {
+    padding: 5% 7% 200px;
+}
+
+.details {
+    margin: 5% 0px;
+    text-align: center;
+}
+
+.book-cover:hover{
+    filter:brightness(25%)
+}
+
+.summary {
+    visibility: hidden;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 18rem;
+    height: 26rem;
+    pointer-events : none;
+}
+
+.fixed-bottom {
+    height: 15rem;
+    background-color: white;
+    border-style: solid none none none;
+}
+
+.hidden {
+    visibility: visible;
+}
+
+.user-book-cover {
+    width: 10rem;
+    height: 15rem;
+}
+
+.user-choice {
+    text-align: center;
+}
+
+.banner {
+    text-align: center;
+}
+
+.name {
+    margin-top: 4%;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 6rem;
+}
+
+.add-book {
+    margin-top: 2%;
+    margin-right: 3rem;
+    text-align: right;
+}
