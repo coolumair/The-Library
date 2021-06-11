@@ -1,5 +1,6 @@
 var onlineBooks;
-var onlineBooksAdded;
+
+var bookAddedToCart = false;
 
 fetch("https://api.apispreadsheets.com/data/13947/").then(res=>{
 	if (res.status === 200){
@@ -79,12 +80,6 @@ for (var i = 0; i < authors.length; i++){
 
 
 
-$(".book-cover").on("mouseenter", function(){
-    $(this).parent().children(".summary").addClass("hidden");
-    console.log("bing");
-}, function() {
-    $(this).parent().children(".summary").removeClass("hidden");
-});
 
 $('.books').on("mouseenter", ".col .book-cover", function() {
     $(this).parent().children(".summary").addClass("hidden");
@@ -98,7 +93,17 @@ $('.books').on("mouseleave", ".col .book-cover", function() {
 
 
 $('.books').on("click", ".col .read-this", function() {
-    $(".user-books:last-of-type").append('<div class="col user-choice col-lg-2"></div>');
+    if (bookAddedToCart == false) {
+        
+            
+
+            
+        
+        $("body").prepend('<div class="fixed-bottom"></div>');
+        $(".fixed-bottom").append('<div class="row user-books"></div>')
+        bookAddedToCart = true;
+    }
+    $(".user-books").append('<div class="col user-choice col-lg-2"></div>');
 
     $(".user-choice:last-of-type").append('<img src="' + $(this).parent().children(".book-cover").attr("src") + '" alt="Book" class="user-book-cover">');
 
@@ -109,5 +114,6 @@ $('.books').on("click", ".col .read-this", function() {
 $(".add-book-button").click(function (){
     window.location.href = "addBook.html";
 });
+
 
 
